@@ -7,7 +7,7 @@ const cors =require("cors")
 
 const app= express()
 app.use(cors({
-   origin: "http://localhost:5173",
+   origin: "https://spotify-mern-stack-project-iypejtg0i-vikasyadav098s-projects.vercel.app",
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
