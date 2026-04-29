@@ -10,6 +10,7 @@ const allowedOrigins = [
    "http://localhost:5173",
   "https://spotify-mern-stack-project-git-main-vikasyadav098s-projects.vercel.app",
   "https://spotify-mern-stack-project-87j41fao2-vikasyadav098s-projects.vercel.app",
+   "https://spotify-mern-stack-project-lc1sd1q96-vikasyadav098s-projects.vercel.app",
 ]
 
 app.use(cors({
