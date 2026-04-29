@@ -6,11 +6,22 @@ const musicRouter =require("./routes/music.routes")
 const cors =require("cors")
 
 const app= express()
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://spotify-mern-stack-project-git-main-vikasyadav098s-projects.vercel.app",
+]
+
 app.use(cors({
-   origin: "https://spotify-mern-stack-project-87j41fao2-vikasyadav098s-projects.vercel.app",
+  origin: function(origin, callback) {
+    if(!origin || allowedOrigins.includes(origin)) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
+  allowedHeaders: ["Content-Type", "Authorization"],
 }))
 app.use(express.json())
 app.use(cookieParser())
